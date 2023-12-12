@@ -47,9 +47,11 @@ def zamanı_düzenle(zaman:str):
 def kontrol(ip_adresi:str):
     
     dosya = 'sifre-denemeleri.json'
+    try:
+        ipaddress.ip_address(ip_adresi) # normal ip adresi yazmazsanız kod çalışmaz deneme yapmak istiyorsanız burayı kaldırabilirsiniz
+    except:
+        return
 
-    ipaddress.ip_address(ip_adresi) # normal ip adresi yazmazsanız kod çalışmaz deneme yapmak istiyorsanız burayı kaldırabilirsiniz
-    
     içerik = oku(dosya)
 
     if içerik: # içerik boş değilse
