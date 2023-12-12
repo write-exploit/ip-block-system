@@ -80,7 +80,7 @@ def kontrol(ip_adresi:str):
             fark_saniye = fark.total_seconds()
             if fark_saniye >= 300: # 5 dakika geçti ise
                 veri_sil('blacklist.json',ip_adresi)
-                kontrol()
+                kontrol(ip_adresi)
             else:
                 pass
 
